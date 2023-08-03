@@ -8,7 +8,8 @@ class Major(models.Model):
 class Student(models.Model):
     std_id = models.IntegerField()
     first_name = models.CharField(max_length=256)
-    prefix = models.IntegerField(max_length=256)
+    prefix = models.IntegerField()
     last_name = models.CharField(max_length=256)
     phone = models.CharField(max_length=10)
     address = models.TextField(max_length=256)
+    major = models.ForeignKey(Major, on_delete=models.CASCADE, default=1)

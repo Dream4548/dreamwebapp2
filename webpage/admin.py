@@ -4,6 +4,7 @@ from .models import Student, Major
 
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin) : 
-    list_dispaly = ('')
+    list_dispaly = ('std_id', 'prefix', 'name', 'lastname', 'phone')
+    search_fields = ('name', 'lastname')
 
-# Register your models here.
+
